@@ -1,0 +1,13 @@
+langchain
+langgraph
+cassio
+langchain_community
+tiktoken
+langchain-groq 
+langchainhub 
+chromadb 
+langchain_openai
+python-dotenv
+requests
+beautifulsoup4
+wikipedia
