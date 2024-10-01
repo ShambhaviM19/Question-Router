@@ -20,8 +20,8 @@ from langgraph.graph import END, StateGraph, START
 load_dotenv()
 
 cassio.init(
-    token=os.getenv("ASTRA_DB_APPLICATION_TOKEN"),
-    database_id=os.getenv("ASTRA_DB_ID")
+    token=st.secrets("ASTRA_DB_APPLICATION_TOKEN"),
+    database_id=st.secrets("ASTRA_DB_ID")
 )
 
 os.environ["OPENAI_API_KEY"] =st.secrets["OPENAI_API_KEY"]
@@ -71,7 +71,7 @@ def initialize_components():
     
     retriever = astra_vector_store.as_retriever(search_kwargs={"k": 3})
     
-    groq_api_key = os.getenv('GROQ_API_KEY')
+    groq_api_key = st.secrets('GROQ_API_KEY')
     llm = ChatGroq(groq_api_key=groq_api_key, model_name="mixtral-8x7b-32768")
     
     return embeddings, astra_vector_store, retriever, llm
