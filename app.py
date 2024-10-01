@@ -24,7 +24,7 @@ cassio.init(
     database_id=os.getenv("ASTRA_DB_ID")
 )
 
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"] =st.secrets["OPENAI_API_KEY"]
 
 st.set_page_config(
     page_title="AI-Powered Q&A System 🤖",
